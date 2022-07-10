@@ -1,4 +1,4 @@
-public class Book {
+public class Book extends Object {
 
     private final String name;
     private int year;
@@ -24,5 +24,23 @@ public class Book {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Book bk = (Book) obj;
+        if (this == obj)
+            return true;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return this.year.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Имя автора:" + this.author + ".";
     }
 }
